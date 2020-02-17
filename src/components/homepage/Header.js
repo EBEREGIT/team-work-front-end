@@ -1,13 +1,13 @@
-import React, { Fragment } from "react";
+import React from "react";
 import NavComponent from "./Header/NavComponent";
 import Slider from "./Header/Slider";
 
 function Header() {
   return (
-    <Fragment>
+    <header>
       <NavComponent />
       <Slider />
-    </Fragment>
+    </header>
   );
 }
 
