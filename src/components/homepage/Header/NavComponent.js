@@ -12,11 +12,11 @@ function NavComponent() {
   return (
     <Fragment>
       {/* nav */}
-      <Navbar bg="light" expand="lg">
+      <Navbar expand="lg">
         <div class="container">
           {/* brand */}
           <Navbar.Brand href="#home">
-            <img src="https://res.cloudinary.com/ebysoft/image/upload/c_thumb,w_200,g_face/v1581948076/5.jpg" class="img-fluid ${3|rounded-top, rounded-right, rounded-bottom, rounded-left, rounded-circle,|}" alt="" />
+            <img src="https://res.cloudinary.com/ebysoft/image/upload/c_scale,h_50,w_50/v1581970125/LogoMakr_2vjJ4C.png" class="" alt="" />
           </Navbar.Brand>
           {/* toggle button */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
