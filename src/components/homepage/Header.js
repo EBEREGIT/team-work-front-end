@@ -1,12 +1,14 @@
-import React, { Fragment } from 'react'
-import NavComponent from './Header/NavComponent'
+import React from "react";
+import NavComponent from "./Header/NavComponent";
+import Slider from "./Header/Slider";
 
 function Header() {
-    return (
-        <Fragment>
-            <NavComponent />
-        </Fragment>
-    )
+  return (
+    <header>
+      <NavComponent />
+      <Slider />
+    </header>
+  );
 }
 
-export default Header
+export default Header;
