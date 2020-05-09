@@ -1,12 +1,10 @@
 import React, { Fragment } from "react";
 import {
-  Button,
   Navbar,
   Nav,
   NavDropdown,
-  Form,
-  FormControl
 } from "react-bootstrap";
+import Signin from "./Signin";
 
 function NavComponent() {
   return (
@@ -38,15 +36,8 @@ function NavComponent() {
               </NavDropdown>
             </Nav>
             
-            {/* search form */}
-            <Form inline>
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="mr-sm-2"
-              />
-              <Button variant="outline-success">Search</Button>
-            </Form>
+            {/* Sign in form */}
+            <Signin/>
           </Navbar.Collapse>
         </div>
       </Navbar>

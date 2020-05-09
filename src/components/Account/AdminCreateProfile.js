@@ -29,10 +29,8 @@ class AdminCreateProfile extends Component {
 
     fetch(url, options)
       .then(response => response.json())
-      .then(data => {
-        console.log("succes:" + data);
-      })
-      .catch(error => console.error("failur:" + error));
+      .then(result => console.log(result))
+      .catch(error => console.error("failure on API call from Frontend:" + error));
   };
 
   handleInputChange = e => {
