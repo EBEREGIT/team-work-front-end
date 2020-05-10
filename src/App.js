@@ -6,6 +6,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from './components/Home';
 import EmployeeCreateProfile from './components/Account/EmployeeCreateProfile';
 import AdminCreateProfile from './components/Account/AdminCreateProfile';
+import Chat from './components/Chat';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/signup" component={EmployeeCreateProfile} />
         <Route path="/admin-create-employee" component={AdminCreateProfile} />
+        <Route path="/chats" component={Chat} />
       </Switch>
     </div>
   );
