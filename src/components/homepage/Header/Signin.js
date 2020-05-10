@@ -6,18 +6,40 @@ export default class Signin extends Component {
     super(props);
 
     // default form values
-    this.state ={
+    this.state = {
       email: "",
       password: "",
     };
   }
 
   // happen when form is submitted
-  handleInputChange = (e) => {};
+  handleSubmit = (e) => {
+    e.preventDefault();
+    //   API url to be called
+    const url = "http://localhost:5000/auth/signin";
+    //   data from user
+    const data = this.state;
+    //   API call options
+    const options = {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+
+    // fetch the API
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((result) => console.log(result))
+      .catch((error) => {
+        console.log("frontend failure" + error);
+      });
+  };
 
   // happen when a user is typing into the input box
   handleInputChange = (e) => {
-      console.log(e.target.value);
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -45,7 +67,7 @@ export default class Signin extends Component {
           onChange={this.handleInputChange}
         />
         {/* button */}
-        <Button variant="outline-success">Sign In</Button>
+        <Button type="submit">Sign In</Button>
       </Form>
     );
   }

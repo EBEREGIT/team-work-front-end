@@ -5,47 +5,58 @@ import { Form, Col, Button, Container, Row } from "react-bootstrap";
 class AdminCreateProfile extends Component {
   constructor(props) {
     super(props);
+    // setting all input values to empty by default
     this.state = {
-      firstName: "",
-      lastName: "",
+      first_name: "",
+      last_name: "",
       email: "",
       password: "",
       gender: "",
-      jobRole: "",
+      job_role: "",
       department: "",
-      address: ""
+      address: "",
     };
   }
 
-  handleSubmit = e => {
+  // happens when form is submitted
+  handleSubmit = (e) => {
     e.preventDefault();
     const url = "http://localhost:5000/auth/create-user/";
     const data = this.state;
     const options = {
-      method: "post",
-      headers: new Headers(),
-      body: JSON.stringify(data)
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     };
 
     fetch(url, options)
-      .then(response => response.json())
-      .then(result => console.log(result))
-      .catch(error => console.error("failure on API call from Frontend:" + error));
+      .then((response) => response.json())
+      .then((result) => console.log(result))
+      .catch((error) =>
+        console.error("failure on API call from Frontend:" + error)
+      );
   };
 
-  handleInputChange = e => {
+  // happens when a user is typing in an input box
+  handleInputChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
   render() {
+
+    // passing down the values from the state
     const {
-      firstName,
-      lastName,
+      first_name,
+      last_name,
       email,
       password,
       gender,
-      jobRole,
+      job_role,
       department,
-      address
+      address,
     } = this.state;
 
     return (
@@ -53,26 +64,31 @@ class AdminCreateProfile extends Component {
         <Container>
           <Row>
             <Col md={{ span: 7, offset: 5 }}>
+
+              {/* registration form */}
               <form onSubmit={this.handleSubmit}>
                 <Form.Row>
                   <legend>Create an Employee's Profile</legend>
-                  <Form.Group as={Col} controlId="formGridFirstName">
+
+                  {/* First name */}
+                  <Form.Group as={Col} controlId="formGridfirst_name">
                     <Form.Label>First Name</Form.Label>
                     <Form.Control
                       type="name"
-                      name="firstName"
-                      value={firstName}
+                      name="first_name"
+                      value={first_name}
                       placeholder="First Name"
                       onChange={this.handleInputChange}
                     />
                   </Form.Group>
 
-                  <Form.Group as={Col} controlId="formGridLastName">
+                  {/* Last Name */}
+                  <Form.Group as={Col} controlId="formGridlast_name">
                     <Form.Label>Last Name</Form.Label>
                     <Form.Control
                       type="name"
-                      name="lastName"
-                      value={lastName}
+                      name="last_name"
+                      value={last_name}
                       placeholder="Last Name"
                       onChange={this.handleInputChange}
                     />
@@ -80,6 +96,7 @@ class AdminCreateProfile extends Component {
                 </Form.Row>
 
                 <Form.Row>
+                  {/* Email */}
                   <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label>Email</Form.Label>
                     <Form.Control
@@ -91,6 +108,7 @@ class AdminCreateProfile extends Component {
                     />
                   </Form.Group>
 
+                  {/* password */}
                   <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control
@@ -104,6 +122,7 @@ class AdminCreateProfile extends Component {
                 </Form.Row>
 
                 <Form.Row>
+                  {/* Gender */}
                   <Form.Group as={Col} controlId="formGridState">
                     <Form.Label>Gender</Form.Label>
                     <Form.Control
@@ -119,18 +138,20 @@ class AdminCreateProfile extends Component {
                     </Form.Control>
                   </Form.Group>
 
-                  <Form.Group as={Col} controlId="formGridJobRole">
+                  {/* Job Role */}
+                  <Form.Group as={Col} controlId="formGridjob_role">
                     <Form.Label>Job Role</Form.Label>
                     <Form.Control
                       type="text"
-                      name="jobRole"
-                      value={jobRole}
+                      name="job_role"
+                      value={job_role}
                       placeholder="Job Role"
                       onChange={this.handleInputChange}
                     />
                   </Form.Group>
 
                   <Form.Group as={Col} controlId="formGridDepartment">
+                    {/* Department */}
                     <Form.Label>Department</Form.Label>
                     <Form.Control
                       type="text"
@@ -143,6 +164,7 @@ class AdminCreateProfile extends Component {
                 </Form.Row>
 
                 <Form.Group controlId="formGridAddress">
+                  {/* Address */}
                   <Form.Label>Address</Form.Label>
                   <Form.Control
                     type="textarea"

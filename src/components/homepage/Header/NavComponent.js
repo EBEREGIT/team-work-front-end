@@ -11,11 +11,11 @@ function NavComponent() {
     <Fragment>
       {/* nav */}
       <Navbar expand="lg">
-        <div class="container">
+        <div className="container">
 
           {/* brand */}
           <Navbar.Brand href="/">
-            <img src="https://res.cloudinary.com/ebysoft/image/upload/c_scale,h_50,w_50/v1581970125/LogoMakr_2vjJ4C.png" class="" alt="" />
+            <img src="https://res.cloudinary.com/ebysoft/image/upload/c_scale,h_50,w_50/v1581970125/LogoMakr_2vjJ4C.png" className="" alt="" />
           </Navbar.Brand>
 
           {/* toggle button */}
