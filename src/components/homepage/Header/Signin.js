@@ -44,7 +44,7 @@ export default class Signin extends Component {
   };
 
   render() {
-    // get the details returned by the API call
+    // get the details setState()
     const { email, password } = this.state;
     return (
       <Form inline onSubmit={this.handleSubmit}>
