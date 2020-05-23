@@ -24,13 +24,17 @@ function NavComponent() {
 
             {/* menu */}
             <Nav className="mr-auto">
+              {/* documentation */}
               <Nav.Link href="/">Docs</Nav.Link>
+
+              {/* All chats */}
+              <Nav.Link href="/feed">Chat</Nav.Link>
 
               {/* Dropdown */}
               <NavDropdown title="Account" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
+                <NavDropdown.Item href="admin-create-employee">Sign Up</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="signin">Sign In</NavDropdown.Item>
+                <NavDropdown.Item href="/">Sign In</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="signout">Sign out</NavDropdown.Item>
               </NavDropdown>
