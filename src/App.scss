@@ -1,6 +1,28 @@
+$site-green: #28a745;
+$site-white: #ffffff;
+
 body{
+    .chat{
+        padding-top: 5%;
+        padding-bottom: 5%;
+        background-color: grey;
+        .all-chats{
+        margin-top: 5%;
+    }
+    }
+    
 
     h1{
         text-align: center;
+        color: $site-green;
+    }
+
+    footer {
+        padding-bottom: 0;
+        margin-bottom: 0;
+
+        .breadcrumb{
+            background-color: $site-white !important;
+        }
     }
 }

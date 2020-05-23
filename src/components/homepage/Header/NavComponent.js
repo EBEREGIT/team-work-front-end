@@ -1,47 +1,47 @@
 import React, { Fragment } from "react";
 import {
-  Button,
   Navbar,
   Nav,
   NavDropdown,
-  Form,
-  FormControl
 } from "react-bootstrap";
+import Signin from "./Signin";
 
 function NavComponent() {
   return (
     <Fragment>
       {/* nav */}
-      <Navbar bg="light" expand="lg">
-        <div class="container">
+      <Navbar expand="lg">
+        <div className="container">
+
           {/* brand */}
-          <Navbar.Brand href="#home">
-            <img src="https://res.cloudinary.com/ebysoft/image/upload/c_thumb,w_200,g_face/v1581948076/5.jpg" class="img-fluid ${3|rounded-top, rounded-right, rounded-bottom, rounded-left, rounded-circle,|}" alt="" />
+          <Navbar.Brand href="/">
+            <img src="https://res.cloudinary.com/ebysoft/image/upload/c_scale,h_50,w_50/v1581970125/LogoMakr_2vjJ4C.png" className="" alt="" />
           </Navbar.Brand>
+
           {/* toggle button */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
+
             {/* menu */}
             <Nav className="mr-auto">
-              <Nav.Link href="#home">Docs</Nav.Link>
+              {/* documentation */}
+              <Nav.Link href="/">Docs</Nav.Link>
+
+              {/* All chats */}
+              <Nav.Link href="/feed">Chat</Nav.Link>
+
               {/* Dropdown */}
               <NavDropdown title="Account" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Sign Up</NavDropdown.Item>
+                <NavDropdown.Item href="admin-create-employee">Sign Up</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.2">Sign In</NavDropdown.Item>
+                <NavDropdown.Item href="/">Sign In</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.3">Sign out</NavDropdown.Item>
+                <NavDropdown.Item href="signout">Sign out</NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            {/* search form */}
-            <Form inline>
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="mr-sm-2"
-              />
-              <Button variant="outline-success">Search</Button>
-            </Form>
+            
+            {/* Sign in form */}
+            <Signin/>
           </Navbar.Collapse>
         </div>
       </Navbar>

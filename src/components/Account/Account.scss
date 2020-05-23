@@ -1,0 +1,19 @@
+@import './../../App.scss';
+
+.account{
+    background-image: url('https://res.cloudinary.com/ebysoft/image/upload/c_scale,e_sharpen:100,h_500,w_1200/v1582195374/alex-kotliarskyi-QBpZGqEMsKg-unsplash.jpg');
+    background-color: $site-green;
+    background-blend-mode: soft-light;
+    height: 500px;
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    form{
+        background-color: $site-white;
+        padding: 2%;
+    }
+}
