@@ -16,7 +16,7 @@ export default class Signin extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     //   API url to be called
-    const url = "http://localhost:5000/auth/signin";
+    const url = "https://tw-apis.herokuapp.com/auth/signin";
     //   data from user
     const data = this.state;
     //   API call options

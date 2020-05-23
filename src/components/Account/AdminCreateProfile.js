@@ -21,7 +21,7 @@ class AdminCreateProfile extends Component {
   // happens when form is submitted
   handleSubmit = (e) => {
     e.preventDefault();
-    const url = "http://localhost:5000/auth/create-user/";
+    const url = "https://tw-apis.herokuapp.com/auth/create-user/";
     const data = this.state;
     const options = {
       method: "POST",

@@ -46,7 +46,7 @@ export default class CreatePost extends Component {
       // make createGIF API call
       axios({
         method: "post",
-        url: "http://localhost:5000/gifs/",
+        url: "https://tw-apis.herokuapp.com/gifs/",
         data: {
           title: data.title,
           image: e.target.result,
@@ -58,7 +58,7 @@ export default class CreatePost extends Component {
         .then(
           // make createArticle API call
           axios
-            .post("http://localhost:5000/articles/", data)
+            .post("https://tw-apis.herokuapp.com/articles/", data)
             .then((artcleResult) => {
               console.log(artcleResult);
             })
