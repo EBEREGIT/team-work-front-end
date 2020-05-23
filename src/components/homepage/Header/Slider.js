@@ -5,6 +5,8 @@ function Slider() {
   return (
     <Fragment>
       <Carousel>
+
+        {/* Slide 1 */}
         <Carousel.Item>
           <img
             className="d-block w-100"
@@ -12,6 +14,8 @@ function Slider() {
             alt="First slide"
           />
         </Carousel.Item>
+        
+        {/* Slide 2 */}
         <Carousel.Item>
           <img
             className="d-block w-100"
@@ -19,6 +23,8 @@ function Slider() {
             alt="Third slide"
           />
         </Carousel.Item>
+        
+        {/* Slide 3 */}
         <Carousel.Item>
           <img
             className="d-block w-100"
@@ -26,6 +32,8 @@ function Slider() {
             alt="Third slide"
           />
         </Carousel.Item>
+        
+        {/* Slide 4 */}
         <Carousel.Item>
           <img
             className="d-block w-100"
@@ -33,6 +41,8 @@ function Slider() {
             alt="Third slide"
           />
         </Carousel.Item>
+        
+        {/* Slide 5 */}
         <Carousel.Item>
           <img
             className="d-block w-100"
