@@ -18,6 +18,8 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/signup" component={EmployeeCreateProfile} />
         <Route path="/admin-create-employee" component={AdminCreateProfile} />
+
+        {/* Routes that must meet the login condition before being accessed */}
         <ProtectedRoute path="/feed" component={Chat} />
       </Switch>
     </div>
