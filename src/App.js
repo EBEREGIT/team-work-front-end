@@ -7,6 +7,7 @@ import Home from './components/Home';
 import EmployeeCreateProfile from './components/Account/EmployeeCreateProfile';
 import AdminCreateProfile from './components/Account/AdminCreateProfile';
 import Chat from './components/Chat';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/signup" component={EmployeeCreateProfile} />
         <Route path="/admin-create-employee" component={AdminCreateProfile} />
-        <Route path="/feed" component={Chat} />
+        <ProtectedRoute path="/feed" component={Chat} />
       </Switch>
     </div>
   );

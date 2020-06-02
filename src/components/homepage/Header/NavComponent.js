@@ -2,9 +2,10 @@ import React, { Fragment } from "react";
 import {
   Navbar,
   Nav,
-  NavDropdown,
+  NavDropdown
 } from "react-bootstrap";
 import Signin from "./Signin";
+import Signout from "../../Signout";
 
 function NavComponent() {
   return (
@@ -36,8 +37,10 @@ function NavComponent() {
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="/">Sign In</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="signout">Sign out</NavDropdown.Item>
               </NavDropdown>
+
+              {/* sign out */}
+              <Signout />
             </Nav>
             
             {/* Sign in form */}

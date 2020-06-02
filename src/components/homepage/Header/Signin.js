@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { Button, Form, FormControl } from "react-bootstrap";
-import Cookies from 'universal-cookie';
+import Cookies from "universal-cookie";
 import axios from "axios";
 const cookies = new Cookies();
 
@@ -36,18 +36,14 @@ class Signin extends Component {
       headers,
     })
       .then((result) => {
-        console.log(result);
-
+        // create cookie with the JWT
         cookies.set("AUTH-TOKEN", result.data.token, { path: "/" });
-        
-        console.log("Login token = " + cookies.get('AUTH-TOKEN', { path: "/" }));
-
-        // console.log("Logout token = " + cookies.remove('AUTH-TOKEN', { path: "/" }));
-
+        // redirect user to the feeds page
         this.props.history.push("/feed");
       })
       .catch((error) => {
-        console.log("frontend failure" + error);
+        error = new Error(error);
+        throw error;
       });
   };
 
@@ -81,7 +77,9 @@ class Signin extends Component {
           onChange={this.handleInputChange}
         />
         {/* button */}
-        <Button type="submit">Sign In</Button>
+        <Button type="submit" onClick={this.handleSubmit}>
+          Sign In
+        </Button>
       </Form>
     );
   }

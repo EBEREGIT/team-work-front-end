@@ -33,7 +33,8 @@ export default class AllChats extends Component {
         });
       })
       .catch((error) => {
-        console.log(error);
+        error = new Error(error);
+        throw error;
       });
   }
 
