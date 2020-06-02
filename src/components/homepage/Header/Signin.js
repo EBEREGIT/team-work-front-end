@@ -1,7 +1,11 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import { Button, Form, FormControl } from "react-bootstrap";
+import Cookies from "universal-cookie";
+import axios from "axios";
+const cookies = new Cookies();
 
-export default class Signin extends Component {
+class Signin extends Component {
   constructor(props) {
     super(props);
 
@@ -16,25 +20,30 @@ export default class Signin extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     //   API url to be called
-    const url = "https://tw-apis.herokuapp.com/auth/signin";
+    const url = "auth/signin";
     //   data from user
     const data = this.state;
-    //   API call options
-    const options = {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
+    //   headers
+    const headers = {
+      Accept: "application/json",
+      "Content-Type": "application/json",
     };
 
-    // fetch the API
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((result) => console.log(result))
+    axios({
+      method: "post",
+      url,
+      data,
+      headers,
+    })
+      .then((result) => {
+        // create cookie with the JWT
+        cookies.set("AUTH-TOKEN", result.data.token, { path: "/" });
+        // redirect user to the feeds page
+        this.props.history.push("/feed");
+      })
       .catch((error) => {
-        console.log("frontend failure" + error);
+        error = new Error(error);
+        throw error;
       });
   };
 
@@ -46,6 +55,7 @@ export default class Signin extends Component {
   render() {
     // get the details setState()
     const { email, password } = this.state;
+
     return (
       <Form inline onSubmit={this.handleSubmit}>
         {/* email */}
@@ -67,8 +77,12 @@ export default class Signin extends Component {
           onChange={this.handleInputChange}
         />
         {/* button */}
-        <Button type="submit">Sign In</Button>
+        <Button type="submit" onClick={this.handleSubmit}>
+          Sign In
+        </Button>
       </Form>
     );
   }
 }
+
+export default withRouter(Signin);

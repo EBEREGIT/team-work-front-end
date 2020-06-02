@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Form, Col, Button, Row } from "react-bootstrap";
 import axios from "axios";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 export default class CreatePost extends Component {
   constructor(props) {
@@ -34,8 +36,16 @@ export default class CreatePost extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
+    // get cookie from browser if logged in
+    const token = cookies.get("AUTH-TOKEN");
+
     //   data from user
     const data = this.state;
+    // header
+    const headers = {
+      Authorization: `Basic ${token}`
+    };
+    
     // instantiate new FIleReader Class
     let imageData = new FileReader();
     // set the path of the image
@@ -51,6 +61,7 @@ export default class CreatePost extends Component {
           title: data.title,
           image: e.target.result,
         },
+        headers
       })
         .then((gifResult) => {
           console.log(gifResult);
@@ -58,7 +69,10 @@ export default class CreatePost extends Component {
         .then(
           // make createArticle API call
           axios
-            .post("https://tw-apis.herokuapp.com/articles/", data)
+            .post("https://tw-apis.herokuapp.com/articles/", {
+              data,
+              headers
+            })
             .then((artcleResult) => {
               console.log(artcleResult);
             })
