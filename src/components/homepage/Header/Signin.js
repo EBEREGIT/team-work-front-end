@@ -42,8 +42,7 @@ class Signin extends Component {
         this.props.history.push("feed");
       })
       .catch((error) => {
-        error = new Error(error);
-        throw error;
+        console.log(`Frontend ${error}`);
       });
   };
 
