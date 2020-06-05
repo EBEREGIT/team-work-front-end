@@ -39,7 +39,7 @@ class Signin extends Component {
         // create cookie with the JWT
         cookies.set("AUTH-TOKEN", result.data.token, { path: "/" });
         // redirect user to the feeds page
-        this.props.history.push("/feed");
+        this.props.history.push("feed");
       })
       .catch((error) => {
         error = new Error(error);
