@@ -16,7 +16,7 @@ export default class AllChats extends Component {
   componentDidMount() {
     const token = cookies.get("AUTH-TOKEN");
     //   API url to be called
-    const url = "feed/";
+    const url = "https://tw-apis.herokuapp.com/feed/";
     //   headers
     const headers = {
       Authorization: `Basic ${token}`
