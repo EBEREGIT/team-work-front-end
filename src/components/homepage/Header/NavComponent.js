@@ -3,7 +3,7 @@ import {
   Navbar,
   Nav,
 } from "react-bootstrap";
-import Signin from "./Signin";
+import Signin from "../../Account/Signin";
 import IsLoggedIn from "./IsLoggedIn";
 
 function NavComponent() {
