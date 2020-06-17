@@ -2,10 +2,9 @@ import React, { Fragment } from "react";
 import {
   Navbar,
   Nav,
-  NavDropdown
 } from "react-bootstrap";
 import Signin from "./Signin";
-import Signout from "../../Signout";
+import IsLoggedIn from "./IsLoggedIn";
 
 function NavComponent() {
   return (
@@ -16,7 +15,7 @@ function NavComponent() {
 
           {/* brand */}
           <Navbar.Brand href="/">
-            <img src="https://res.cloudinary.com/ebysoft/image/upload/c_scale,h_50,w_50/v1581970125/LogoMakr_2vjJ4C.png" className="" alt="" />
+            <img src="https://res.cloudinary.com/ebysoft/image/upload/c_scale,h_50,w_50/v1581970125/LogoMakr_2vjJ4C.png" className="" alt="logo" />
           </Navbar.Brand>
 
           {/* toggle button */}
@@ -30,17 +29,8 @@ function NavComponent() {
 
               {/* All chats */}
               <Nav.Link href="/feed">Chat</Nav.Link>
-
-              {/* Dropdown */}
-              <NavDropdown title="Account" id="basic-nav-dropdown">
-                <NavDropdown.Item href="admin-create-employee">Sign Up</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="/">Sign In</NavDropdown.Item>
-                <NavDropdown.Divider />
-              </NavDropdown>
-
-              {/* sign out */}
-              <Signout />
+              {/* Sign Up/sign out */}
+              <IsLoggedIn/>
             </Nav>
             
             {/* Sign in form */}

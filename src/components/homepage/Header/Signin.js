@@ -40,9 +40,14 @@ class Signin extends Component {
         cookies.set("AUTH-TOKEN", result.data.token, { path: "/" });
         // redirect user to the feeds page
         this.props.history.push("feed");
+        // refresh page to remove the sign up and login from nav bar
+        window.location.reload();
+        // prevent further reload
+        return false;
       })
       .catch((error) => {
-        console.log(`Frontend ${error}`);
+        error = new Error(error);
+        throw error;
       });
   };
 
@@ -54,33 +59,43 @@ class Signin extends Component {
   render() {
     // get the details setState()
     const { email, password } = this.state;
+    // get cookie from browser if logged in
+    const token = cookies.get("AUTH-TOKEN");
 
-    return (
-      <Form inline onSubmit={this.handleSubmit}>
-        {/* email */}
-        <FormControl
-          type="email"
-          placeholder="email"
-          className="mr-sm-2"
-          name="email"
-          value={email}
-          onChange={this.handleInputChange}
-        />
-        {/* password */}
-        <FormControl
-          type="password"
-          placeholder="password"
-          className="mr-sm-2"
-          name="password"
-          value={password}
-          onChange={this.handleInputChange}
-        />
-        {/* button */}
-        <Button type="submit" onClick={this.handleSubmit}>
-          Sign In
-        </Button>
-      </Form>
-    );
+    if (token) {
+      return (
+        <p>
+          <i>Hi, Welcome To Team Work</i>
+        </p>
+      );
+    } else {
+      return (
+        <Form inline onSubmit={this.handleSubmit}>
+          {/* email */}
+          <FormControl
+            type="email"
+            placeholder="email"
+            className="mr-sm-2"
+            name="email"
+            value={email}
+            onChange={this.handleInputChange}
+          />
+          {/* password */}
+          <FormControl
+            type="password"
+            placeholder="password"
+            className="mr-sm-2"
+            name="password"
+            value={password}
+            onChange={this.handleInputChange}
+          />
+          {/* button */}
+          <Button type="submit" onClick={this.handleSubmit}>
+            Sign In
+          </Button>
+        </Form>
+      );
+    }
   }
 }
 

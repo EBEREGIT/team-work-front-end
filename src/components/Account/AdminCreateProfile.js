@@ -1,6 +1,10 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import "./Account.scss";
+import axios from "axios";
 import { Form, Col, Button, Container, Row } from "react-bootstrap";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 class AdminCreateProfile extends Component {
   constructor(props) {
@@ -21,23 +25,48 @@ class AdminCreateProfile extends Component {
   // happens when form is submitted
   handleSubmit = (e) => {
     e.preventDefault();
-    const url = "https://tw-apis.herokuapp.com/auth/create-user/";
-    const data = this.state;
-    const options = {
-      method: "POST",
-      headers: {
+    const url = "https://tw-apis.herokuapp.com/auth/create-user/",
+      data = this.state,
+      method = "POST",
+      headers = {
         Accept: "application/json",
         "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    };
+      };
 
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((result) => console.log(result))
-      .catch((error) =>
-        console.error("failure on API call from Frontend:" + error)
-      );
+    // create user
+    axios({ url, method, headers, data })
+      .then((result) => {
+        // login user
+        const url = "https://tw-apis.herokuapp.com/auth/signin",
+          //   data from user
+          data = {
+            email: result.data.result.email,
+            password: result.data.result.password,
+          };
+
+        // login uer
+        axios({ method, url, data, headers })
+          .then((result) => {
+            // create cookie with the JWT
+            cookies.set("AUTH-TOKEN", result.data.token, { path: "/" });
+            // redirect user to the feeds page
+            this.props.history.push("feed");
+            // refresh page to remove the sign up and login from nav bar
+            window.location.reload();
+            // prevent further reload
+            return false;
+          })
+          // login error
+          .catch((error) => {
+            error = new Error(error);
+            throw error;
+          });
+      })
+      // sign up error
+      .catch((error) => {
+        error = new Error(error);
+        throw error;
+      });
   };
 
   // happens when a user is typing in an input box
@@ -46,7 +75,6 @@ class AdminCreateProfile extends Component {
   };
 
   render() {
-
     // passing down the values from the state
     const {
       first_name,
@@ -64,7 +92,6 @@ class AdminCreateProfile extends Component {
         <Container>
           <Row>
             <Col md={{ span: 7, offset: 5 }}>
-
               {/* registration form */}
               <form onSubmit={this.handleSubmit}>
                 <Form.Row>
@@ -187,4 +214,4 @@ class AdminCreateProfile extends Component {
   }
 }
 
-export default AdminCreateProfile;
+export default withRouter(AdminCreateProfile);

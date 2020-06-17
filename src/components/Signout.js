@@ -11,6 +11,10 @@ class Signout extends Component {
     cookies.remove("AUTH-TOKEN", { path: "/" });
     // direct the user to the landing page
     this.props.history.push("/");
+    // refresh page to remove the sign out button from nav bar
+    window.location.reload();
+    // prevent further reload
+    return false;
   };
 
   render() {
