@@ -1,18 +1,22 @@
 $site-green: #28a745;
 $site-white: #ffffff;
 
-body{
-    .chat{
+body {
+    .chat {
         padding-top: 5%;
         padding-bottom: 5%;
-        background-color: grey;
-        .all-chats{
-        margin-top: 5%;
-    }
-    }
-    
 
-    h1{
+        .all-chats {
+            margin-top: 5%;
+
+            .card {
+                box-shadow: 6px 6px 12px 0px rgba(40, 167, 69, 0.42);
+            }
+        }
+    }
+
+
+    h1 {
         text-align: center;
         color: $site-green;
     }
@@ -21,7 +25,7 @@ body{
         padding-bottom: 0;
         margin-bottom: 0;
 
-        .breadcrumb{
+        .breadcrumb {
             background-color: $site-white !important;
         }
     }

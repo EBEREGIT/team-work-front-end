@@ -19,7 +19,7 @@ export default class AllChats extends Component {
     const url = "https://tw-apis.herokuapp.com/feed/";
     //   headers
     const headers = {
-      Authorization: `Basic ${token}`
+      Authorization: `Basic ${token}`,
     };
 
     axios({
@@ -38,6 +38,49 @@ export default class AllChats extends Component {
       });
   }
 
+  // delete article here
+  deleteArticle(id) {
+    const token = cookies.get("AUTH-TOKEN");
+    //   headers
+    const headers = {
+      Authorization: `Basic ${token}`,
+    };
+    // url
+    const url = `https://tw-apis.herokuapp.com/articles/${id}`;
+
+    axios({
+      method: "delete",
+      url,
+      headers,
+    })
+    // update the feed if delete is successful
+      .then(() => {
+        // feed URL
+        const url = "https://tw-apis.herokuapp.com/feed/";
+
+        axios({
+          method: "get",
+          url,
+          headers,
+        })
+          .then((feed) => {
+            this.setState({
+              feed,
+            });
+          })
+          .catch((error) => {
+            error = new Error(error);
+            throw error;
+          });
+      })
+      // delete error
+      .catch((error) => {
+        error = new Error(error);
+        throw error;
+      });
+  }
+
+  // render page
   render() {
     const { feed } = this.state;
     // get the data from the response
@@ -58,7 +101,7 @@ export default class AllChats extends Component {
       gifs.push(
         <Row className="all-chats">
           <Col lg={12}>
-            <Card style={{ width: "100%" }}>
+            <Card>
               <Card.Title>Poster Name</Card.Title>
               <Card.Img
                 variant="top"
@@ -81,18 +124,27 @@ export default class AllChats extends Component {
     const articleFeed = allFeed[2];
     const articles = [];
 
-    // loop through the gif Feed for display on the page
+    // loop through the article Feed for display on the page
     for (let article in articleFeed) {
       articles.push(
         <Row className="all-chats">
           <Col lg={12}>
-            <Card style={{ width: "100%" }}>
+            <Card>
               <Card.Title>Poster Name</Card.Title>
               <Card.Body>
                 <Card.Title>{articleFeed[article].title}</Card.Title>
                 <Card.Text>{articleFeed[article].body}</Card.Text>
                 <Button variant="primary">Edit</Button>
-                <Button variant="danger">Delete</Button>
+                <Button
+                  variant="danger"
+                  type="submit"
+                  // function call when the delete button is clicked
+                  onClick={() => {
+                    this.deleteArticle(articleFeed[article].id);
+                  }}
+                >
+                  Delete
+                </Button>
               </Card.Body>
             </Card>
           </Col>
