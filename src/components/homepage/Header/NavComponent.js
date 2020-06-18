@@ -3,8 +3,8 @@ import {
   Navbar,
   Nav,
 } from "react-bootstrap";
-import Signin from "../../Account/Signin";
 import IsLoggedIn from "./IsLoggedIn";
+import SignIn from "../../Account/SignIn";
 
 function NavComponent() {
   return (
@@ -34,7 +34,7 @@ function NavComponent() {
             </Nav>
             
             {/* Sign in form */}
-            <Signin/>
+            <SignIn />
           </Navbar.Collapse>
         </div>
       </Navbar>
