@@ -6,7 +6,7 @@ import { Form, Col, Button, Container, Row } from "react-bootstrap";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
-class AdminCreateProfile extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
     // setting all input values to empty by default
@@ -214,4 +214,4 @@ class AdminCreateProfile extends Component {
   }
 }
 
-export default withRouter(AdminCreateProfile);
+export default withRouter(SignUp);

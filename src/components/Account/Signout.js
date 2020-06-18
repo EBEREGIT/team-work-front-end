@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
-class Signout extends Component {
+class SignOut extends Component {
   // logout function
   logout = () => {
     // destroy the cookie
@@ -30,4 +30,4 @@ class Signout extends Component {
   }
 }
 
-export default withRouter(Signout);
+export default withRouter(SignOut);

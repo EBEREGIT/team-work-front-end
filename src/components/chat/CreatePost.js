@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Form, Col, Button, Row } from "react-bootstrap";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import Article from "./Article";
 const cookies = new Cookies();
 
 export default class CreatePost extends Component {
@@ -85,6 +86,13 @@ export default class CreatePost extends Component {
     const { title, body } = this.state;
 
     return (
+      <Fragment>
+        <Row>
+          <Article/>
+        </Row>
+
+
+
       <Row>
         <Col>
           <Form onSubmit={this.handleSubmit}>
@@ -132,6 +140,7 @@ export default class CreatePost extends Component {
           </Form>
         </Col>
       </Row>
-    );
+      </Fragment>
+      );
   }
 }

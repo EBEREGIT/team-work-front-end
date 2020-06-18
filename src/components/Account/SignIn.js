@@ -5,7 +5,7 @@ import Cookies from "universal-cookie";
 import axios from "axios";
 const cookies = new Cookies();
 
-class Signin extends Component {
+class SignIn extends Component {
   constructor(props) {
     super(props);
 
@@ -62,6 +62,7 @@ class Signin extends Component {
     // get cookie from browser if logged in
     const token = cookies.get("AUTH-TOKEN");
 
+    // show message if logged in
     if (token) {
       return (
         <p>
@@ -69,6 +70,7 @@ class Signin extends Component {
         </p>
       );
     } else {
+      // show form if logged out
       return (
         <Form inline onSubmit={this.handleSubmit}>
           {/* email */}
@@ -90,7 +92,7 @@ class Signin extends Component {
             onChange={this.handleInputChange}
           />
           {/* button */}
-          <Button type="submit" onClick={this.handleSubmit}>
+          <Button type="submit" className="btn-success" onClick={this.handleSubmit}>
             Sign In
           </Button>
         </Form>
@@ -99,4 +101,4 @@ class Signin extends Component {
   }
 }
 
-export default withRouter(Signin);
+export default withRouter(SignIn);

@@ -1,7 +1,7 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
 import Cookies from "universal-cookie";
-import Signout from "../../Account/Signout";
+import SignOut from "../../Account/SignOut";
 const cookies = new Cookies();
 
 export default function IsLoggedIn() {
@@ -10,8 +10,8 @@ export default function IsLoggedIn() {
 
   //   check if logged in
   if (token) {
-    return <Signout />;
+    return <SignOut />;
   } else {
-    return <Nav.Link href="/signup">Sign Up</Nav.Link>;
+    return <Nav.Link href="/sign-up">Sign Up</Nav.Link>;
   }
 }

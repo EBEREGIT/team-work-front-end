@@ -53,7 +53,7 @@ export default class AllChats extends Component {
       url,
       headers,
     })
-    // update the feed if delete is successful
+      // update the feed if delete is successful
       .then(() => {
         // feed URL
         const url = "https://tw-apis.herokuapp.com/feed/";
@@ -78,6 +78,11 @@ export default class AllChats extends Component {
         error = new Error(error);
         throw error;
       });
+  }
+
+  // delete GIF here
+  deleteGIF = (id) => {
+    alert(`${id}: Unsupport Action. You can only upload and view image`);
   }
 
   // render page
@@ -112,7 +117,16 @@ export default class AllChats extends Component {
               <Card.Body>
                 <Card.Title>{gifFeed[gif].title}</Card.Title>
                 <Button variant="primary">Edit</Button>
-                <Button variant="danger">Delete</Button>
+                <Button
+                  variant="danger"
+                  type="submit"
+                  // function call when the delete button is clicked
+                  onClick={() => {
+                    this.deleteGIF(gifFeed[gif].id);
+                  }}
+                >
+                  Delete
+                </Button>
               </Card.Body>
             </Card>
           </Col>
@@ -154,12 +168,10 @@ export default class AllChats extends Component {
 
     return (
       <Fragment>
-        <h2 style={{ backgroundColor: "white" }}>Articles Feed</h2>
+        <h2>Articles Feed</h2>
         {articles}
 
-        <h2 style={{ backgroundColor: "white", marginTop: "5%" }}>
-          Image Feed
-        </h2>
+        <h2 style={{ marginTop: "5%" }}>Image Feed</h2>
         {gifs}
       </Fragment>
     );
