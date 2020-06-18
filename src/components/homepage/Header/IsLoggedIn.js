@@ -1,7 +1,7 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
 import Cookies from "universal-cookie";
-import SignOut from "../../Account/SignOut";
+import SignOut from "../../Account/Signout";
 const cookies = new Cookies();
 
 export default function IsLoggedIn() {
