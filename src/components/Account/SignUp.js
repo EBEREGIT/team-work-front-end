@@ -95,7 +95,7 @@ class SignUp extends Component {
               {/* registration form */}
               <form onSubmit={this.handleSubmit}>
                 <Form.Row>
-                  <legend>Create an Employee's Profile</legend>
+                  <legend>Create an Account</legend>
 
                   {/* First name */}
                   <Form.Group as={Col} controlId="formGridfirst_name">

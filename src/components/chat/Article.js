@@ -2,7 +2,15 @@ import React, { Fragment, useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 
 export default function Article() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false),
+    [title, setTitle] = useState(""),
+    [body, setBody] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(title);
+    console.log(body);
+  };
 
   return (
     <Fragment>
@@ -27,11 +35,18 @@ export default function Article() {
         </Modal.Header>
         <Modal.Body>
           {/* form */}
-          <Form>
+          <Form onSubmit={handleSubmit}>
             {/* article title */}
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Title</Form.Label>
-              <Form.Control type="text" placeholder="Enter Article Title" />
+              <Form.Control
+                type="text"
+                name="title"
+                value={title}
+                // defaultValue={title || ""}
+                onChange={(e) => setTitle(console.log(e.target.value))}
+                placeholder="Enter Article Title"
+              />
             </Form.Group>
 
             {/* article body */}
@@ -40,13 +55,17 @@ export default function Article() {
               <Form.Control
                 as="textarea"
                 rows="3"
+                name="body"
+                value={body}
+                // defaultValue={body || ""}
+                onChange={(e) => setBody(console.log(e.target.value))}
                 placeholder="Enter Article Body"
               />
             </Form.Group>
 
             {/* button */}
-            <Button variant="primary" type="submit">
-              Submit
+            <Button variant="primary" type="submit" onClick={handleSubmit}>
+              Create Post
             </Button>
           </Form>
         </Modal.Body>
