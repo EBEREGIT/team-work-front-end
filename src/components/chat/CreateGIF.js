@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 
-export default function GIF() {
+export default function CreateGIF() {
   const [show, setShow] = useState(false),
   [title, setTitle] =  useState(""),
   [image, setImage] = useState("");

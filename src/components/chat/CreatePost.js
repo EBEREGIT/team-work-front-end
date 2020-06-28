@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Col, Row } from "react-bootstrap";
-import Article from "./Article";
-import GIF from "./GIF";
+import CreateArticle from "./CreateArticle";
+import CreateGIF from "./CreateGIF";
 
 export default function CreatePost()  {
     return (
@@ -9,12 +9,12 @@ export default function CreatePost()  {
         <Row className="text-center">
           {/* article button */}
           <Col>
-            <Article />
+            <CreateArticle />
           </Col>
 
           {/* GIF button */}
           <Col>
-            <GIF />
+            <CreateGIF />
           </Col>
         </Row>
       </Fragment>
