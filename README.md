@@ -15,6 +15,10 @@ This is the frontend of an internal social network for employees of an organizat
 ## Hosted
 https://team-work.netlify.app/
 
+### Login
+> **Email**: adam@eve.com
+
+> **Password**: 111111
 
 ### `npm start`
 Runs the app in the development mode.<br />
