@@ -6,7 +6,7 @@ import CreateGIF from "./CreateGIF";
 export default function CreatePost()  {
     return (
       <Fragment>
-        <Row className="text-center">
+        <Row className="text-center create-post">
           {/* article button */}
           <Col>
             <CreateArticle />

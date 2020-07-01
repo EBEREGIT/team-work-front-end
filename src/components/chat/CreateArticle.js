@@ -11,7 +11,7 @@ export default function CreateArticle(props) {
   return (
     <Fragment>
       {/* button to pop up modal */}
-      <Button variant="primary" onClick={() => setShow(true)}>
+      <Button variant="success" onClick={() => setShow(true)} size="lg" block>
         Create Article Post
       </Button>
 
@@ -118,7 +118,7 @@ class ArticleForm extends Component {
           </Form.Group>
 
           {/* button */}
-          <Button variant="primary" type="submit" onClick={this.handleSubmit}>
+          <Button variant="success" type="submit" onClick={this.handleSubmit}>
             Create Post
           </Button>
         </Form>

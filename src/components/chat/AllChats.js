@@ -13,6 +13,7 @@ export default class AllChats extends Component {
     };
   }
 
+  // handle API call here
   componentDidMount() {
     const token = cookies.get("AUTH-TOKEN");
     //   API url to be called
@@ -83,7 +84,7 @@ export default class AllChats extends Component {
   // delete GIF here
   deleteGIF = (id) => {
     alert(`${id}: Unsupport Action. You can only upload and view image`);
-  }
+  };
 
   // render page
   render() {
@@ -116,7 +117,7 @@ export default class AllChats extends Component {
               />
               <Card.Body>
                 <Card.Title>{gifFeed[gif].title}</Card.Title>
-                <Button variant="primary">Edit</Button>
+                <Button variant="success">Edit</Button>
                 <Button
                   variant="danger"
                   type="submit"
@@ -148,7 +149,7 @@ export default class AllChats extends Component {
               <Card.Body>
                 <Card.Title>{articleFeed[article].title}</Card.Title>
                 <Card.Text>{articleFeed[article].body}</Card.Text>
-                <Button variant="primary">Edit</Button>
+                <Button variant="success">Edit</Button>
                 <Button
                   variant="danger"
                   type="submit"
@@ -168,11 +169,17 @@ export default class AllChats extends Component {
 
     return (
       <Fragment>
-        <h2>Articles Feed</h2>
-        {articles}
+        <Row>
+          <Col>
+            <h2 className="text-center">Articles Feed</h2>
+            {articles}
+          </Col>
 
-        <h2 style={{ marginTop: "5%" }}>Image Feed</h2>
-        {gifs}
+          <Col>
+            <h2 className="text-center">Image Feed</h2>
+            {gifs}
+          </Col>
+        </Row>
       </Fragment>
     );
   }
