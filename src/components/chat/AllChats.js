@@ -2,6 +2,7 @@ import React, { Fragment, Component } from "react";
 import { Col, Button, Card, Row } from "react-bootstrap";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import { EditArticle } from "./EdithArticle";
 const cookies = new Cookies();
 
 export default class AllChats extends Component {
@@ -10,6 +11,7 @@ export default class AllChats extends Component {
 
     this.state = {
       feed: "",
+      articleID: null,
     };
   }
 
@@ -46,7 +48,7 @@ export default class AllChats extends Component {
     const headers = {
       Authorization: `Basic ${token}`,
     };
-    // url
+    // url with article unique ID
     const url = `https://tw-apis.herokuapp.com/articles/${id}`;
 
     axios({
@@ -149,7 +151,14 @@ export default class AllChats extends Component {
               <Card.Body>
                 <Card.Title>{articleFeed[article].title}</Card.Title>
                 <Card.Text>{articleFeed[article].body}</Card.Text>
-                <Button variant="success">Edit</Button>
+                {/* edit article button. props are passed to the edit article component from here */}
+                <EditArticle
+                  articleID={articleFeed[article].id}
+                  articleTitle={articleFeed[article].title}
+                  articleBody={articleFeed[article].body}
+                />
+
+                {/* delete article button */}
                 <Button
                   variant="danger"
                   type="submit"
