@@ -1,13 +1,16 @@
-import React, { Fragment } from "react";
+import React from "react";
+import { Container } from "react-bootstrap";
 import Header from "./homepage/Header";
 import Footer from "./homepage/Footer";
+import Main from "./homepage/Main";
 
 function Home() {
   return (
-    <Fragment>
+    <Container>
       <Header />
+      <Main />
       <Footer />
-    </Fragment>
+    </Container>
   );
 }
 

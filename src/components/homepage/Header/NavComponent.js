@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import {
   Navbar,
   Nav,
+  Container
 } from "react-bootstrap";
 import IsLoggedIn from "./IsLoggedIn";
 import SignIn from "../../Account/SignIn";
@@ -11,7 +12,7 @@ function NavComponent() {
     <Fragment>
       {/* nav */}
       <Navbar expand="lg">
-        <div className="container">
+        <Container>
 
           {/* brand */}
           <Navbar.Brand href="/">
@@ -36,7 +37,7 @@ function NavComponent() {
             {/* Sign in form */}
             <SignIn />
           </Navbar.Collapse>
-        </div>
+        </Container>
       </Navbar>
     </Fragment>
   );
