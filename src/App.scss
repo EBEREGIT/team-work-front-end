@@ -1,25 +1,52 @@
 $site-green: #28a745;
 $site-white: #ffffff;
-$h-fonts: 'Modak', cursive;
-$other-fonts: 'Varela Round', sans-serif;
+$h-fonts: 'Modak',
+cursive;
+$other-fonts: 'Varela Round',
+sans-serif;
 
 body {
     * {
         font-family: $other-fonts;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         font-family: $h-fonts;
     }
-    
+
+    .navbar {
+
+        .navbar-nav {
+            a {
+                font-size: 1.2rem;
+                color: #000000 !important;
+
+                &:focus {
+                    text-decoration: underline;
+                }
+
+                &:hover{
+                    color: $site-green !important;
+                }
+            }
+        }
+
+    }
+
     .chat {
         .create-post {
             padding-top: 5%;
             padding-bottom: 5%;
         }
 
-        h2{
-            margin-bottom: 3%;
+        h4 {
+            margin-top: 5%;
+            margin-bottom: 5%;
         }
 
         .all-chats {
@@ -31,8 +58,8 @@ body {
         }
     }
 
-    main{
-        h3{
+    main {
+        h4 {
             margin-top: 5% !important;
             margin-bottom: 5% !important;
             text-align: center;

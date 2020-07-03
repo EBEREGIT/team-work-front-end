@@ -187,12 +187,12 @@ export default class AllChats extends Component {
       <Fragment>
         <Row>
           <Col xm={12} sm={12} md={6} lg={6}>
-            <h2 className="text-center">Articles Feed</h2>
+            <h4 className="text-center">Articles Feed</h4>
             {articles}
           </Col>
 
           <Col xm={12} sm={12} md={6} lg={6}>
-            <h2 className="text-center">Image Feed</h2>
+            <h4 className="text-center">Image Feed</h4>
             {gifs}
           </Col>
         </Row>
