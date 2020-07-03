@@ -2,7 +2,7 @@
 This is the frontend of an internal social network for employees of an organization. The goal of this application is to facilitate more interaction between colleagues and promote team bonding. It will be based on the [Team Work APIs Docs](https://github.com/EBEREGIT/team-work-APIs).
 
 ## Dependencies
-* [Team Work APIs Docs](https://documenter.getpostman.com/view/11502999/Szt8dpXa?version=latest#22d34824-5f1b-44da-8e6c-b692c6c5e72d).
+* [Team Work APIs Docs](https://documenter.getpostman.com/view/11502999/Szt8dpXa?version=latest#22d34824-5f1b-44da-8e6c-b692c6c5e72d)
 * [Axios](https://www.npmjs.com/package/axios)
 * [React](https://reactjs.org/)
 * [React Bootstrap](https://react-bootstrap.netlify.com/)

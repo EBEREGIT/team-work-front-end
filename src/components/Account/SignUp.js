@@ -19,15 +19,24 @@ class SignUp extends Component {
       job_role: "",
       department: "",
       address: "",
+      isSigningUp: false,
     };
   }
 
   // happens when form is submitted
   handleSubmit = (e) => {
     e.preventDefault();
+    // set isSigningUp to true
+    this.setState({
+      isSigningUp: true,
+    });
+    // url
     const url = "https://tw-apis.herokuapp.com/auth/create-user/",
+      // data
       data = this.state,
+      // method
       method = "POST",
+      // headers
       headers = {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -49,6 +58,10 @@ class SignUp extends Component {
           .then((result) => {
             // create cookie with the JWT
             cookies.set("AUTH-TOKEN", result.data.token, { path: "/" });
+            // set isSigningUp to true
+            this.setState({
+              isSigningUp: false,
+            });
             // redirect user to the feeds page
             this.props.history.push("feed");
             // refresh page to remove the sign up and login from nav bar
@@ -85,6 +98,7 @@ class SignUp extends Component {
       job_role,
       department,
       address,
+      isSigningUp,
     } = this.state;
 
     return (
@@ -203,7 +217,7 @@ class SignUp extends Component {
                 </Form.Group>
 
                 <Button variant="primary" type="submit">
-                  Submit
+                  {isSigningUp ? "Registering" : "Register"}
                 </Button>
               </form>
             </Col>

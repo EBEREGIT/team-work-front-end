@@ -12,6 +12,7 @@ export default class AllChats extends Component {
     this.state = {
       feed: "",
       articleID: null,
+      isDeleting: false,
     };
   }
 
@@ -43,6 +44,11 @@ export default class AllChats extends Component {
 
   // delete article here
   deleteArticle(id) {
+    // set isDeleting to true
+    this.setState({
+      isDeleting: true,
+    });
+    // collect token from cookie
     const token = cookies.get("AUTH-TOKEN");
     //   headers
     const headers = {
@@ -69,6 +75,7 @@ export default class AllChats extends Component {
           .then((feed) => {
             this.setState({
               feed,
+              isDeleting: false,
             });
           })
           .catch((error) => {
@@ -90,7 +97,7 @@ export default class AllChats extends Component {
 
   // render page
   render() {
-    const { feed } = this.state;
+    const { feed, isDeleting } = this.state;
     // get the data from the response
     const feedData = feed.data;
 
@@ -167,7 +174,7 @@ export default class AllChats extends Component {
                     this.deleteArticle(articleFeed[article].id);
                   }}
                 >
-                  Delete
+                  {isDeleting ? "Deleting" : "Delete"}
                 </Button>
               </Card.Body>
             </Card>

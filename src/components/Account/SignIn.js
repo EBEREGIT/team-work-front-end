@@ -13,12 +13,17 @@ class SignIn extends Component {
     this.state = {
       email: "",
       password: "",
+      isLoggingIn: false,
     };
   }
 
   // happen when form is submitted
   handleSubmit = (e) => {
     e.preventDefault();
+    // change isLoggingIn to true
+    this.setState({
+      isLoggingIn: true,
+    });
     //   API url to be called
     const url = "https://tw-apis.herokuapp.com/auth/signin";
     //   data from user
@@ -40,6 +45,10 @@ class SignIn extends Component {
         cookies.set("AUTH-TOKEN", result.data.token, { path: "/" });
         // redirect user to the feeds page
         this.props.history.push("feed");
+        // change isLoggingIn to false
+        this.setState({
+          isLoggingIn: false,
+        });
         // refresh page to remove the sign up and login from nav bar
         window.location.reload();
         // prevent further reload
@@ -58,7 +67,7 @@ class SignIn extends Component {
 
   render() {
     // get the details setState()
-    const { email, password } = this.state;
+    const { email, password, isLoggingIn } = this.state;
     // get cookie from browser if logged in
     const token = cookies.get("AUTH-TOKEN");
 
@@ -92,8 +101,12 @@ class SignIn extends Component {
             onChange={this.handleInputChange}
           />
           {/* button */}
-          <Button type="submit" className="btn-success" onClick={this.handleSubmit}>
-            Sign In
+          <Button
+            type="submit"
+            className="btn-success"
+            onClick={this.handleSubmit}
+          >
+            {isLoggingIn ? "Signing In..." : "Sign In"}
           </Button>
         </Form>
       );

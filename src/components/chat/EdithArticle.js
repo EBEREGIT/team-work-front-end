@@ -30,7 +30,7 @@ export function EditArticle(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            {/* Article form component receives props passed from the allChats component */}
+          {/* Article form component receives props passed from the allChats component */}
           <ArticleForm
             id={props.articleID}
             title={props.articleTitle}
@@ -51,12 +51,18 @@ class ArticleForm extends Component {
       id: props.id,
       title: props.title,
       body: props.body,
+      isEditting: false,
     };
   }
 
   // submits form
   handleSubmit = (e) => {
     e.preventDefault();
+    // set isEditting to true
+    this.setState({
+      isEditting: true,
+    });
+
     // collect token from cookie
     const token = cookies.get("AUTH-TOKEN");
     //   API url to be called
@@ -79,6 +85,10 @@ class ArticleForm extends Component {
       headers,
     })
       .then(() => {
+        // set isEditting to false
+        this.setState({
+          isEditting: false,
+        });
         // refresh page to remove the sign up and login from nav bar
         window.location.reload();
         // prevent further reload
@@ -97,7 +107,7 @@ class ArticleForm extends Component {
 
   render() {
     // data from the state
-    const { title, body } = this.state;
+    const { title, body, isEditting } = this.state;
 
     return (
       <Fragment>
@@ -130,7 +140,7 @@ class ArticleForm extends Component {
 
           {/* button */}
           <Button variant="success" type="submit" onClick={this.handleSubmit}>
-            Edit Post
+            { isEditting ? "Editing" : "Edit Post"}
           </Button>
         </Form>
       </Fragment>
