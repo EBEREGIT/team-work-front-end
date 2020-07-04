@@ -26,7 +26,7 @@ function NavComponent() {
             {/* menu */}
             <Nav className="mr-auto">
               {/* documentation */}
-              <Nav.Link target="_blank" href="https://documenter.getpostman.com/view/11502999/Szt8dpXa?version=latest">Docs</Nav.Link>
+              <Nav.Link target="_blank" href="https://documenter.getpostman.com/view/11502999/Szt8dpXa?version=latest" rel="noopener noreferrer" >Docs</Nav.Link>
 
               {/* All chats */}
               <Nav.Link href="/feed">Chat</Nav.Link>

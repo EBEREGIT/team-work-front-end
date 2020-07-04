@@ -1,4 +1,6 @@
 $site-green: #28a745;
+$site-dark-green: #2a833e;
+$site-darkest-green: #175425;
 $site-white: #ffffff;
 $h-fonts: 'Modak',
 cursive;
@@ -76,6 +78,17 @@ body {
                 margin-bottom: 0;
             }
         }
+
+        #testimonies{
+            img{
+                border-radius: 50%;
+                height: 200px;
+                width: 100px;
+                padding-right: 25%;
+                padding-left: 25%;
+                margin-bottom: 10%;
+            }
+        }
     }
 
 
@@ -85,11 +98,48 @@ body {
     }
 
     footer {
+        background-color: $site-dark-green;
+        padding-top: 5%;
         padding-bottom: 0;
         margin-bottom: 0;
+        margin-top: 10%;
+        text-align: center;
 
-        .breadcrumb {
-            background-color: $site-white !important;
+        h4{
+            color: white;
+            text-decoration: underline;
+        }
+
+        .list-group{
+            padding-left: 20%;
+            padding-right: 20%;
+
+            .list-group-item{
+                background-color: $site-dark-green;
+                // padding-top: 0;
+                padding-bottom: 0;
+                
+                a{
+                    color: white !important;
+                }
+            }
+        }
+
+        #logo{
+            h1{
+                padding-top: 5%;
+                color: white;
+            }
+        }
+
+        #copywrite{
+            background-color: $site-darkest-green;
+            padding-top: 3%;
+            padding-bottom: 3%;
+
+            a{
+                color: white !important;
+            }
         }
     }
 }

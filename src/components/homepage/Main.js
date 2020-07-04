@@ -3,6 +3,7 @@ import Services from './Main/Services'
 import Team from './Main/Team'
 import About from './Main/About'
 import Contact from './Main/Contact'
+import Testimonies from './Main/Testimonies'
 
 export default function Main() {
     return (
@@ -10,6 +11,7 @@ export default function Main() {
             <Services />
             <Team />
             <About />
+            <Testimonies />
             <Contact />
         </main>
     )

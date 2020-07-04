@@ -1,10 +1,40 @@
 import React from "react";
-import CopyRight from "./Footer/CopyRight";
+import { Row, Col } from "react-bootstrap";
+import Logo from "./Footer/Logo";
+import Menu from "./Footer/Menu";
+import SocialMedia from "./Footer/SocialMedia";
 
 function Footer() {
   return (
     <footer>
-      <CopyRight />
+      {/* Upper footer */}
+      <Row>
+        {/* logo */}
+        <Col xs={12} sm={12} md={4} lg={4} id="logo">
+          <Logo />
+        </Col>
+
+        {/* menu items */}
+        <Col xs={12} sm={12} md={4} lg={4}>
+          <h4>Quick Menu</h4>
+          <Menu />
+        </Col>
+
+        {/* social media */}
+        <Col xs={12} sm={12} md={4} lg={4}>
+          <h4>Let's Connect</h4>
+          <SocialMedia />
+        </Col>
+
+        {/* Copywrite */}
+        <Col>
+          <p id="copywrite">
+            <a href="https://www.njokusamsonebere.com/">
+              Njoku Samson Ebere &copy; 2020
+            </a>
+          </p>
+        </Col>
+      </Row>
     </footer>
   );
 }
