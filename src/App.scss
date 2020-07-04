@@ -1,4 +1,6 @@
 $site-green: #28a745;
+$site-bg: #f3f9f4;
+$site-bg-green: #cdead3;
 $site-dark-green: #2a833e;
 $site-darkest-green: #175425;
 $site-white: #ffffff;
@@ -8,6 +10,8 @@ $other-fonts: 'Varela Round',
 sans-serif;
 
 body {
+    background-color: $site-bg;
+
     * {
         font-family: $other-fonts;
     }
@@ -70,6 +74,10 @@ body {
     main {
         .team{
             text-align: center;
+            background-color: $site-bg-green;
+            padding-top: 5%;
+            padding-bottom: 5%;
+
             img{
                 width: 200px;
                 height: 200px;
@@ -80,6 +88,9 @@ body {
         }
 
         #testimonies{
+            background-color: $site-bg-green;
+            padding-top: 5%;
+
             img{
                 border-radius: 50%;
                 height: 200px;
@@ -88,9 +99,12 @@ body {
                 padding-left: 25%;
                 margin-bottom: 10%;
             }
+
+            p{
+                margin-bottom: 10%;
+            }
         }
     }
-
 
     h1 {
         text-align: center;

@@ -1,13 +1,14 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Carousel, Row, Col } from "react-bootstrap";
 
 export default function Testimonies() {
   return (
-    <Row id="testimonies">
+    <Fragment>
       <Col xs={12} sm={12} md={12} lg={12}>
         <h4 className="headings">Testimonies</h4>
       </Col>
 
+    <Row id="testimonies">
       <Col
         xs={12}
         sm={12}
@@ -93,6 +94,7 @@ export default function Testimonies() {
           </Carousel.Item>
         </Carousel>
       </Col>
-    </Row>
+      </Row>
+    </Fragment>
   );
 }
