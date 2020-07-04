@@ -5,8 +5,10 @@ export default function Team() {
   return (
     <Fragment>
       <h4 className="headings">Our Team</h4>
-      <Row className="team">
-        <Col xs={6} md={4}>
+      <Row id="team">
+
+          {/* member 1 */}
+        <Col xs={12} sm={12} md={4} lg={4}>
           <Image
             src="https://d2cax41o7ahm5l.cloudfront.net/mi/speaker-photo/appliedmicrobiology-minl-2018-Rucha-Ridhorkar--61996-3540.png"
             roundedCircle
@@ -16,7 +18,9 @@ export default function Team() {
           <p>CEO</p>
           <p>+2347031904145</p>
         </Col>
-        <Col xs={6} md={4}>
+
+        {/* member 2 */}
+        <Col xs={12} sm={12} md={4} lg={4}>
           <Image
             src="https://d2cax41o7ahm5l.cloudfront.net/mi/speaker-photo/appliedmicrobiology-minl-2018-Rucha-Ridhorkar--61996-3540.png"
             roundedCircle
@@ -26,7 +30,9 @@ export default function Team() {
           <p>CEO</p>
           <p>+2347031904145</p>
         </Col>
-        <Col xs={6} md={4}>
+
+        {/* member 3 */}
+        <Col xs={12} sm={12} md={4} lg={4}>
           <Image
             src="https://d2cax41o7ahm5l.cloudfront.net/mi/speaker-photo/appliedmicrobiology-minl-2018-Rucha-Ridhorkar--61996-3540.png"
             roundedCircle

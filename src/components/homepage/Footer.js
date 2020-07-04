@@ -15,13 +15,13 @@ function Footer() {
         </Col>
 
         {/* menu items */}
-        <Col xs={12} sm={12} md={4} lg={4}>
+        <Col xs={12} sm={12} md={4} lg={4} id="menu">
           <h4>Quick Menu</h4>
           <Menu />
         </Col>
 
         {/* social media */}
-        <Col xs={12} sm={12} md={4} lg={4}>
+        <Col xs={12} sm={12} md={4} lg={4} id="connect">
           <h4>Let's Connect</h4>
           <SocialMedia />
         </Col>
