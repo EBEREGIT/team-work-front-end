@@ -10,6 +10,13 @@ body {
         font-family: $other-fonts;
     }
 
+    .headings {
+        margin-top: 5% !important;
+        margin-bottom: 5% !important;
+        text-align: center;
+        text-decoration: underline;
+    }
+
     h1,
     h2,
     h3,
@@ -59,10 +66,15 @@ body {
     }
 
     main {
-        h4 {
-            margin-top: 5% !important;
-            margin-bottom: 5% !important;
+        .team{
             text-align: center;
+            img{
+                width: 200px;
+                height: 200px;
+            }
+            p{
+                margin-bottom: 0;
+            }
         }
     }
 

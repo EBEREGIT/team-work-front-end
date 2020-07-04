@@ -4,7 +4,7 @@ import { Card, CardDeck } from "react-bootstrap";
 export default function Services() {
   return (
     <Fragment className="services">
-      <h4> Our Services</h4>
+      <h4 className="headings"> Our Services</h4>
       <CardDeck>
         <Card>
           <Card.Img
