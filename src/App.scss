@@ -16,6 +16,7 @@ body {
         font-family: $other-fonts;
     }
 
+    // All headings have this style
     .headings {
         margin-top: 10% !important;
         margin-bottom: 5% !important;
@@ -32,6 +33,7 @@ body {
         font-family: $h-fonts;
     }
 
+    // navComponent styles
     .navbar {
 
         .navbar-nav {
@@ -51,6 +53,7 @@ body {
 
     }
 
+    // feed styles
     .chat {
         .create-post {
             padding-top: 5%;
@@ -71,6 +74,7 @@ body {
         }
     }
 
+    // main styles
     main {
         .team{
             text-align: center;
@@ -106,11 +110,7 @@ body {
         }
     }
 
-    h1 {
-        text-align: center;
-        color: $site-green;
-    }
-
+    // footer styles
     footer {
         background-color: $site-dark-green;
         padding-top: 5%;
