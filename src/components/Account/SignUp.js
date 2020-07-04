@@ -4,6 +4,7 @@ import "./Account.scss";
 import axios from "axios";
 import { Form, Col, Button, Container, Row } from "react-bootstrap";
 import Cookies from "universal-cookie";
+import Footer from "../homepage/Footer";
 const cookies = new Cookies();
 
 class SignUp extends Component {
@@ -220,6 +221,11 @@ class SignUp extends Component {
                   {isSigningUp ? "Registering" : "Register"}
                 </Button>
               </form>
+            </Col>
+
+            {/* footer */}
+            <Col xs={12} sm={12} md={12} lg={12}>
+              <Footer />
             </Col>
           </Row>
         </Container>

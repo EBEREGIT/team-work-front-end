@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Chat from './components/Chat';
 import ProtectedRoute from './components/ProtectedRoute';
 import SignUp from './components/Account/SignUp';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -16,9 +17,11 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/sign-up" component={SignUp} />
-
+                
         {/* Routes that must meet the login condition before being accessed */}
         <ProtectedRoute path="/feed" component={Chat} />
+
+        <Route path="*" component={NotFound} />
       </Switch>
     </div>
   );

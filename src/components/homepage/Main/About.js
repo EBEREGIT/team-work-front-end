@@ -35,7 +35,7 @@ export default function About() {
           </p>
 
           {/* call to action button */}
-          <a href="/signup" className="btn btn-success btn-block">
+          <a href="/sign-up" className="btn btn-success btn-block">
             Join Team Work
           </a>
         </Col>
