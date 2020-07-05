@@ -1,5 +1,9 @@
 import React, { Fragment } from "react";
 import { Row, Col } from "react-bootstrap";
+import AOS from "aos";
+import "aos/dist/aos.css";
+// initialize Animation on Scroll (AOS)
+AOS.init();
 
 export default function About() {
   return (
@@ -7,7 +11,17 @@ export default function About() {
       <h3 className="headings">About Us</h3>
       <Row id="about-us">
         {/* video pitch */}
-        <Col xs={12} sm={12} md={6} lg={6}>
+        <Col
+          xs={12}
+          sm={12}
+          md={6}
+          lg={6}
+          data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
+          data-aos-offset="300"
+          data-aos-delay="50"
+        >
           <iframe
             width="100%"
             height="100%"
@@ -20,7 +34,18 @@ export default function About() {
         </Col>
 
         {/* text */}
-        <Col xs={12} sm={12} md={6} lg={6}>
+        <Col
+          xs={12}
+          sm={12}
+          md={6}
+          lg={6}
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+        >
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non
             sapien ut lorem tristique consectetur. Curabitur eu sapien at purus
@@ -35,7 +60,13 @@ export default function About() {
           </p>
 
           {/* call to action button */}
-          <a href="/sign-up" className="btn btn-success btn-block">
+          <a
+            href="/sign-up"
+            className="btn btn-success btn-block"
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
+          >
             Join Team Work
           </a>
         </Col>

@@ -3,6 +3,7 @@ import { Card, CardDeck, Row } from "react-bootstrap";
 import { Fragment } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+// initialize Animation on Scroll (AOS)
 AOS.init();
 
 export default function Services() {
