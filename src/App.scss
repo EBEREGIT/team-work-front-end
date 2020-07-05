@@ -16,12 +16,24 @@ body {
         font-family: $other-fonts;
     }
 
+    /* The headings animation code */
+@keyframes headings {
+    0%   {color:#000000;}
+    25%  {color:$site-green; font-size: 2rem;}
+    100% {color:#000000;}
+  }
+
     // All headings have this style
     .headings {
         margin-top: 100px !important;
         margin-bottom: 5% !important;
         text-align: center;
         text-decoration: underline;
+        animation-name: headings;
+        animation-duration: 10s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
     }
 
     h1,
