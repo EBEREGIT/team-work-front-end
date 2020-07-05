@@ -4,7 +4,7 @@ import { Row, Col, Image } from "react-bootstrap";
 export default function Team() {
   return (
     <Fragment>
-      <h4 className="headings">Our Team</h4>
+      <h3 className="headings">Our Team</h3>
       <Row id="team">
 
           {/* member 1 */}

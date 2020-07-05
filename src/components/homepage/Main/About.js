@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap";
 export default function About() {
   return (
     <Fragment>
-      <h4 className="headings">About Us</h4>
+      <h3 className="headings">About Us</h3>
       <Row id="about-us">
         {/* video pitch */}
         <Col xs={12} sm={12} md={6} lg={6}>

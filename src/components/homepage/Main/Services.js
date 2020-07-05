@@ -5,7 +5,7 @@ import { Fragment } from "react";
 export default function Services() {
   return (
     <Fragment>
-      <h4 className="headings"> Our Services</h4>
+      <h3 className="headings"> Our Services</h3>
       <Row id="services">
         <CardDeck>
           <Card>

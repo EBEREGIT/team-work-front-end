@@ -4,7 +4,7 @@ import { Row, Col, Form, Button } from "react-bootstrap";
 export default function Contact() {
   return (
     <Fragment>
-        <h4 className="headings">Contact Us</h4>
+        <h3 className="headings">Contact Us</h3>
       <Row>
         {/* Map */}
         <Col xs={12} sm={12} md={6} lg={6}>
