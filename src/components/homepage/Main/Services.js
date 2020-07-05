@@ -1,14 +1,23 @@
 import React from "react";
 import { Card, CardDeck, Row } from "react-bootstrap";
 import { Fragment } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 export default function Services() {
   return (
     <Fragment>
-      <h3 className="headings"> Our Services</h3>
+      <h3 className="headings">Our Services</h3>
       <Row id="services">
         <CardDeck>
-          <Card>
+          {/* service 1 */}
+          <Card
+            data-aos="zoom-in-right"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+          >
             <Card.Img
               variant="top"
               src="https://cdn.get.tech/blog/wp-content/uploads/2020/02/tech-student-portfolio.jpg"
@@ -22,7 +31,14 @@ export default function Services() {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card>
+
+          {/* service 2 */}
+          <Card
+            data-aos="zoom-in"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+          >
             <Card.Img
               variant="top"
               src="https://www.readingrockets.org/sites/default/files/styles/share_image/public/field/image/ic-at-2.jpg?itok=XC4cmY-E.jpg"
@@ -35,7 +51,14 @@ export default function Services() {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card>
+
+          {/* service 3 */}
+          <Card
+            data-aos="zoom-in-left"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+          >
             <Card.Img
               variant="top"
               src="https://mbokayabakoko.files.wordpress.com/2011/05/connecting2.jpg"
