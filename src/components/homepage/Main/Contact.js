@@ -1,13 +1,27 @@
 import React, { Fragment } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
+import AOS from "aos";
+import "aos/dist/aos.css";
+// initialize Animation on Scroll (AOS)
+AOS.init();
 
 export default function Contact() {
   return (
     <Fragment>
-        <h3 className="headings">Contact Us</h3>
+      <h3 className="headings">Contact Us</h3>
       <Row>
         {/* Map */}
-        <Col xs={12} sm={12} md={6} lg={6}>
+        <Col
+          xs={12}
+          sm={12}
+          md={6}
+          lg={6}
+          data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
+          data-aos-offset="300"
+          data-aos-delay="50"
+        >
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.4983440950637!2d7.544199814467895!3d6.458366095327719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1044a5a782353a8f%3A0x10afcd81b4f61980!2sEnugu%20State!5e0!3m2!1sen!2sng!4v1593858463759!5m2!1sen!2sng"
             title="Location Map"
@@ -22,7 +36,16 @@ export default function Contact() {
         </Col>
 
         {/* Contact form */}
-        <Col xs={12} sm={12} md={6} lg={6}>
+        <Col
+          xs={12}
+          sm={12}
+          md={6}
+          lg={6}
+          data-aos="zoom-in-right"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+        >
           <Form>
             <Form.Row>
               {/* fullname */}
