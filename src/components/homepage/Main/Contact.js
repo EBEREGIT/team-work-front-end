@@ -11,8 +11,8 @@ export default function Contact() {
     <Fragment>
       {/* Component Heading */}
       <Heading heading="Contact Us" />
-      
-      <Row>
+
+      <Row id="contact-us">
         {/* Map */}
         <Col
           xs={12}

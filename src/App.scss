@@ -97,6 +97,16 @@ body {
             }
         }
 
+        #contact-us{
+            iframe{
+                padding-bottom: 5%;
+            }
+
+            form{
+                margin-bottom: 5%;
+            }
+        }
+
         #team {
             text-align: center;
             background-color: $site-bg-green;
