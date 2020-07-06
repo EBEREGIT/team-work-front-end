@@ -2,13 +2,16 @@ import React, { Fragment } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Heading from "./Heading";
 // initialize Animation on Scroll (AOS)
 AOS.init();
 
 export default function Contact() {
   return (
     <Fragment>
-      <h3 className="headings">Contact Us</h3>
+      {/* Component Heading */}
+      <Heading heading="Contact Us" />
+      
       <Row>
         {/* Map */}
         <Col

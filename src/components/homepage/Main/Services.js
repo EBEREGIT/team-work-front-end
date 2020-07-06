@@ -3,13 +3,16 @@ import { Card, CardDeck, Row } from "react-bootstrap";
 import { Fragment } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Heading from "./Heading";
 // initialize Animation on Scroll (AOS)
 AOS.init();
 
 export default function Services() {
   return (
     <Fragment>
-      <h3 className="headings">Our Services</h3>
+      {/* Component Heading */}
+      <Heading heading="Our Services" />
+      
       <Row id="services">
         <CardDeck>
           {/* service 1 */}

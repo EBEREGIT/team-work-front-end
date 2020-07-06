@@ -1,11 +1,13 @@
 import React, { Fragment } from "react";
 import { Carousel, Row, Col } from "react-bootstrap";
+import Heading from "./Heading";
 
 export default function Testimonies() {
   return (
     <Fragment>
       <Col xs={12} sm={12} md={12} lg={12}>
-        <h3 className="headings">Testimonies</h3>
+        {/* Component Heading */}
+        <Heading heading="Testimonies" />
       </Col>
 
       <Row id="testimonies">

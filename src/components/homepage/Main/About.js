@@ -2,13 +2,16 @@ import React, { Fragment } from "react";
 import { Row, Col } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Heading from "./Heading";
 // initialize Animation on Scroll (AOS)
 AOS.init();
 
 export default function About() {
   return (
     <Fragment>
-      <h3 className="headings">About Us</h3>
+      {/* Component Heading */}
+      <Heading heading="About Us" />
+      
       <Row id="about-us">
         {/* video pitch */}
         <Col
