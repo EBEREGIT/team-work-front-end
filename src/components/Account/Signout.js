@@ -35,7 +35,7 @@ class SignOut extends Component {
       <Button
         size="sm"
         type="submit"
-        className="btn-danger"
+        variant="outline-danger"
         onClick={() => this.logout()}
       >
         {isLoggingOut ? "Signing Out" : "Sign Out"}
