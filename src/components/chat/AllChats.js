@@ -3,7 +3,13 @@ import { Col, Button, Card, Row } from "react-bootstrap";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import { EditArticle } from "./EdithArticle";
+import Heading from "../homepage/Main/Heading";
+import AOS from "aos";
+import "aos/dist/aos.css";
+// initialize cookies
 const cookies = new Cookies();
+// initialize Animation on Scroll (AOS)
+AOS.init();
 
 export default class AllChats extends Component {
   constructor(props) {
@@ -115,7 +121,15 @@ export default class AllChats extends Component {
     for (let gif in gifFeed) {
       gifs.push(
         <Row className="all-chats">
-          <Col lg={12}>
+          <Col
+            lg={12}
+            data-aos="fade-left"
+            data-aos-anchor-placement="top-bottom"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+          >
             <Card>
               <Card.Title>Poster Name</Card.Title>
               <Card.Img
@@ -152,7 +166,15 @@ export default class AllChats extends Component {
     for (let article in articleFeed) {
       articles.push(
         <Row className="all-chats">
-          <Col lg={12}>
+          <Col
+            lg={12}
+            data-aos="fade-right"
+            data-aos-anchor-placement="top-bottom"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+          >
             <Card>
               <Card.Title>Poster Name</Card.Title>
               <Card.Body>
@@ -187,12 +209,12 @@ export default class AllChats extends Component {
       <Fragment>
         <Row>
           <Col xm={12} sm={12} md={6} lg={6}>
-            <h4 className="text-center">Articles Feed</h4>
+            <Heading heading="Article Feed" />
             {articles}
           </Col>
 
           <Col xm={12} sm={12} md={6} lg={6}>
-            <h4 className="text-center">Image Feed</h4>
+            <Heading heading="Image Feed" />
             {gifs}
           </Col>
         </Row>
