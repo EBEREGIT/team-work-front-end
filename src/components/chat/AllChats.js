@@ -131,7 +131,7 @@ export default class AllChats extends Component {
             data-aos-duration="1000"
           >
             <Card>
-              <Card.Title>Poster Name</Card.Title>
+              {/* <Card.Title>Poster Name</Card.Title> */}
               <Card.Img
                 variant="top"
                 src={gifFeed[gif].image_url}
@@ -176,7 +176,7 @@ export default class AllChats extends Component {
             data-aos-duration="1000"
           >
             <Card>
-              <Card.Title>Poster Name</Card.Title>
+              {/* <Card.Title>Poster Name</Card.Title> */}
               <Card.Body>
                 <Card.Title>{articleFeed[article].title}</Card.Title>
                 <Card.Text>{articleFeed[article].body}</Card.Text>
